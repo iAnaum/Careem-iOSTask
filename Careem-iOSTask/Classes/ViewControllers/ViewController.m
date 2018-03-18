@@ -234,44 +234,57 @@
         [self showRetryAlertWithError:JSONError];
         return;
     }
-    NSString *plistPath = [self InternalData];
-    NSMutableArray *plistDic = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
-    
-    if (plistDic.count > 0) {
-        [plistDic addObject:self.Search_TextField.text];
-    }
-    else{
-        plistDic =  [[NSMutableArray alloc] initWithCapacity:10];
-        [plistDic addObject:self.Search_TextField.text];
-    }
-    
-    
-    NSLog(@"%@",plistDic);
-    [plistDic writeToFile:plistPath atomically:YES];
-
     
     // parse data into models
     NSArray *results = responseDict[@"results"];
-    NSArray *newModels = [MoviesModel modelsFromArray:results];
     
-    // create new index paths
-    NSIndexSet *newIndexes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(Movies.count, newModels.count)];
-    NSMutableArray *newIndexPaths = [[NSMutableArray alloc] init];
+    if ([results count] == 0) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:@"No Search Results found" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(__unused UIAlertAction *action) {
+            
+        }]];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
     
-    [newIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, __unused BOOL *stop) {
-        [newIndexPaths addObject:[NSIndexPath indexPathForRow:idx inSection:0]];
-    }];
+    else{
+        NSString *plistPath = [self InternalData];
+        NSMutableArray *plistDic = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
+        
+        if (plistDic.count > 0) {
+            [plistDic addObject:self.Search_TextField.text];
+        }
+        else{
+            plistDic =  [[NSMutableArray alloc] initWithCapacity:10];
+            [plistDic addObject:self.Search_TextField.text];
+        }
+        
+        
+        NSLog(@"%@",plistDic);
+        [plistDic writeToFile:plistPath atomically:YES];
+
+        NSArray *newModels = [MoviesModel modelsFromArray:results];
+        
+        // create new index paths
+        NSIndexSet *newIndexes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(Movies.count, newModels.count)];
+        NSMutableArray *newIndexPaths = [[NSMutableArray alloc] init];
+        
+        [newIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, __unused BOOL *stop) {
+            [newIndexPaths addObject:[NSIndexPath indexPathForRow:idx inSection:0]];
+        }];
+        
+        // update data source
+        total_pages = [responseDict[@"total_pages"] integerValue];
+        counter += 1;
+        Movies = [Movies arrayByAddingObjectsFromArray:newModels];
+        
+        // update table view
+        [self.Search_TableView setHidden:NO];
+        [self.Search_TableView beginUpdates];
+        [self.Search_TableView insertRowsAtIndexPaths:newIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.Search_TableView endUpdates];
+    }
     
-    // update data source
-    total_pages = [responseDict[@"total_pages"] integerValue];
-    counter += 1;
-    Movies = [Movies arrayByAddingObjectsFromArray:newModels];
-    
-    // update table view
-    [self.Search_TableView setHidden:NO];
-    [self.Search_TableView beginUpdates];
-    [self.Search_TableView insertRowsAtIndexPaths:newIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self.Search_TableView endUpdates];
 }
 
 
