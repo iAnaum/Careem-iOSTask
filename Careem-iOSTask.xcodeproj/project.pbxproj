@@ -21,6 +21,11 @@
 		6B046441205C2DBC005DC3C4 /* SearchedMovies_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B04643F205C2DBC005DC3C4 /* SearchedMovies_TableViewCell.xib */; };
 		6B046443205C326E005DC3C4 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B046442205C326E005DC3C4 /* 1024.png */; };
 		6B04644C205C49D6005DC3C4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6B04644B205C49D6005DC3C4 /* Podfile */; };
+		6BB200F8205D978F00325AB4 /* MoviesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB200F7205D978F00325AB4 /* MoviesModel.m */; };
+		6BB200FC205DADA200325AB4 /* CustomInfiniteIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB200FB205DADA200325AB4 /* CustomInfiniteIndicator.m */; };
+		6BB20102205DADE800325AB4 /* UIApplication+NetworkIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB20100205DADE800325AB4 /* UIApplication+NetworkIndicator.m */; };
+		6BB20105205DDE4800325AB4 /* UIUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB20104205DDE4800325AB4 /* UIUtility.m */; };
+		6BB20108205DDE8A00325AB4 /* ThemeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB20107205DDE8A00325AB4 /* ThemeEngine.m */; };
 		934FBBB3D4C113608DCC199E /* libPods-Careem-iOSTask.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6A822E1464F64A6F85AF52 /* libPods-Careem-iOSTask.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +72,16 @@
 		6B046442205C326E005DC3C4 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
 		6B04644B205C49D6005DC3C4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6BB200F5205C617100325AB4 /* Careem-iOSTask-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Careem-iOSTask-Prefix.pch"; sourceTree = "<group>"; };
+		6BB200F6205D978F00325AB4 /* MoviesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesModel.h; sourceTree = "<group>"; };
+		6BB200F7205D978F00325AB4 /* MoviesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesModel.m; sourceTree = "<group>"; };
+		6BB200FA205DADA200325AB4 /* CustomInfiniteIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomInfiniteIndicator.h; sourceTree = "<group>"; };
+		6BB200FB205DADA200325AB4 /* CustomInfiniteIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomInfiniteIndicator.m; sourceTree = "<group>"; };
+		6BB20100205DADE800325AB4 /* UIApplication+NetworkIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+NetworkIndicator.m"; sourceTree = "<group>"; };
+		6BB20101205DADE800325AB4 /* UIApplication+NetworkIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+NetworkIndicator.h"; sourceTree = "<group>"; };
+		6BB20103205DDE4800325AB4 /* UIUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtility.h; sourceTree = "<group>"; };
+		6BB20104205DDE4800325AB4 /* UIUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtility.m; sourceTree = "<group>"; };
+		6BB20106205DDE8A00325AB4 /* ThemeEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeEngine.h; sourceTree = "<group>"; };
+		6BB20107205DDE8A00325AB4 /* ThemeEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeEngine.m; sourceTree = "<group>"; };
 		72C6BEF5447FED8AEFB2ACF2 /* Pods-Careem-iOSTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Careem-iOSTaskTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Careem-iOSTaskTests/Pods-Careem-iOSTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B42D91985CF58C941CBCBF0 /* Pods-Careem-iOSTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Careem-iOSTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-Careem-iOSTask/Pods-Careem-iOSTask.release.xcconfig"; sourceTree = "<group>"; };
 		9CDED2EA324350D4AF3DBDEC /* libPods-Careem-iOSTaskUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Careem-iOSTaskUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +145,7 @@
 		6B04640A205C1E42005DC3C4 /* Careem-iOSTask */ = {
 			isa = PBXGroup;
 			children = (
+				6BB200F9205DAD8E00325AB4 /* HelperClasses */,
 				6B04644A205C469B005DC3C4 /* InterfaceBuilders */,
 				6B046445205C452D005DC3C4 /* Resourses */,
 				6B046444205C44A5005DC3C4 /* Classes */,
@@ -198,6 +214,8 @@
 		6B046448205C4580005DC3C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6BB200F6205D978F00325AB4 /* MoviesModel.h */,
+				6BB200F7205D978F00325AB4 /* MoviesModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +237,21 @@
 				6B046416205C1E42005DC3C4 /* LaunchScreen.storyboard */,
 			);
 			path = InterfaceBuilders;
+			sourceTree = "<group>";
+		};
+		6BB200F9205DAD8E00325AB4 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				6BB20101205DADE800325AB4 /* UIApplication+NetworkIndicator.h */,
+				6BB20100205DADE800325AB4 /* UIApplication+NetworkIndicator.m */,
+				6BB200FA205DADA200325AB4 /* CustomInfiniteIndicator.h */,
+				6BB200FB205DADA200325AB4 /* CustomInfiniteIndicator.m */,
+				6BB20106205DDE8A00325AB4 /* ThemeEngine.h */,
+				6BB20107205DDE8A00325AB4 /* ThemeEngine.m */,
+				6BB20103205DDE4800325AB4 /* UIUtility.h */,
+				6BB20104205DDE4800325AB4 /* UIUtility.m */,
+			);
+			path = HelperClasses;
 			sourceTree = "<group>";
 		};
 		B04DBD1E9A10F6EB618D2124 /* Pods */ = {
@@ -539,9 +572,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BB20105205DDE4800325AB4 /* UIUtility.m in Sources */,
 				6B046410205C1E42005DC3C4 /* ViewController.m in Sources */,
+				6BB200F8205D978F00325AB4 /* MoviesModel.m in Sources */,
+				6BB20108205DDE8A00325AB4 /* ThemeEngine.m in Sources */,
+				6BB200FC205DADA200325AB4 /* CustomInfiniteIndicator.m in Sources */,
 				6B046440205C2DBC005DC3C4 /* SearchedMovies_TableViewCell.m in Sources */,
 				6B04641B205C1E42005DC3C4 /* main.m in Sources */,
+				6BB20102205DADE800325AB4 /* UIApplication+NetworkIndicator.m in Sources */,
 				6B04640D205C1E42005DC3C4 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

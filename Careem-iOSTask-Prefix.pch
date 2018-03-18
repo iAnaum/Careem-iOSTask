@@ -2,7 +2,7 @@
 //  Careem-iOSTask-Prefix.pch
 //  Careem-iOSTask
 //
-//  Created by Anaum Hamid on 3/17/18.
+//  Created by Anaum Hamid on 3/18/18.
 //  Copyright © 2018 Anaum Hamid. All rights reserved.
 //
 
@@ -11,6 +11,9 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-#import <AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
+#define JSONAPI  "http://api.themoviedb.org/3/search/movie?api_key=2696829a81b1b5827d515ff121700838&query="
+#define PosterPath "http://image.tmdb.org/t/p/w92"
 
 #endif /* Careem_iOSTask_Prefix_pch */
