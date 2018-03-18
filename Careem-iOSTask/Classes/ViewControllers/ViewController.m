@@ -39,11 +39,6 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsPath = [paths objectAtIndex:0];
     NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"SuggestionsData.plist"];
-    
-    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-    {
-        plistPath = [[NSBundle mainBundle] pathForResource:@"SuggestionsData" ofType:@"plist"];
-    }
     return plistPath;
 }
 
@@ -282,10 +277,18 @@
 
 -(void)Open{
     NSString *plistPath = [self InternalData];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
+    {
+        plistPath = [[NSBundle mainBundle] pathForResource:@"manuallyData" ofType:@"plist"];
+    }
     NSMutableArray *dict = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
     NSLog(@"%@",dict);
     if ([dict count] > 0) {
-        
+        [self.Search_TableView setHidden:YES];
+        [self.Search_TableView endUpdates];
+        NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:dict];
+        arrayWithoutDuplicates = [orderedSet array];
+        NSLog(@"%@",arrayWithoutDuplicates);
             _tableViewContainer.frame = CGRectMake(self.Search_TextField.frame.origin.x, 100, self.Search_TextField.frame.size.width, 200);
             _tableView.frame = CGRectMake(0, 0, _tableViewContainer.frame.size.width, _tableViewContainer.frame.size.height);
             TableViewDetection = @"Mini";

@@ -49,7 +49,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <connections>
                                             <outlet property="delegate" destination="b9s-um-SxQ" id="ln6-Ji-BdP"/>
                                             <outlet property="pasteDelegate" destination="b9s-um-SxQ" id="Y88-1M-45X"/>
@@ -86,7 +86,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JE9-kZ-ybL">
-                                <rect key="frame" x="0.0" y="114" width="375" height="533"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.2901960784" green="0.63921568630000003" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.048151825189999997" green="0.60676945719999997" blue="0.9416045368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,7 +104,7 @@
                             <constraint firstItem="YG4-mh-C8T" firstAttribute="trailing" secondItem="JE9-kZ-ybL" secondAttribute="trailing" id="WVh-hQ-9MP"/>
                             <constraint firstItem="Zwm-qk-aee" firstAttribute="trailing" secondItem="YG4-mh-C8T" secondAttribute="trailing" id="cTy-sZ-02t"/>
                             <constraint firstItem="JE9-kZ-ybL" firstAttribute="top" secondItem="Zwm-qk-aee" secondAttribute="bottom" id="ciw-h1-FcP"/>
-                            <constraint firstItem="YG4-mh-C8T" firstAttribute="bottom" secondItem="JE9-kZ-ybL" secondAttribute="bottom" constant="20" id="ngy-IF-Po0"/>
+                            <constraint firstItem="YG4-mh-C8T" firstAttribute="bottom" secondItem="JE9-kZ-ybL" secondAttribute="bottom" id="ngy-IF-Po0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YG4-mh-C8T"/>
                     </view>
